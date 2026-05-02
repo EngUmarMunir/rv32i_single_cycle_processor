@@ -18,9 +18,7 @@ The design is built as a single clocked datapath. Fetch, decode, execute, memory
 - `data_mem.sv` - data memory for load and store operations
 - `load_store_unit.sv` - load/store data formatting and extension
 - `mux.sv` - shared multiplexer helper module
-- `*_tb.sv` - focused module testbenches
-- `reiscv_tb.sv` - top-level processor monitor for simulation
-- `fib_im.mem` and `test_all_instructions.mem` - memory initialization files used by the testbenches
+- `fib_im.mem` - instruction memory initialization file
 
 ## Features
 
@@ -41,7 +39,7 @@ The project is intended for a SystemVerilog simulator such as Vivado XSim.
 4. Ensure the `.mem` files stay in the project directory so the memories load correctly.
 5. Run the simulation.
 
-For top-level verification, use `reiscv_tb` as the simulation top.
+For top-level verification, use `riscv_tb` as the simulation top.
 
 ## Notes
 
