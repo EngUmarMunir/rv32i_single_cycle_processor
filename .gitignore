@@ -1,0 +1,29 @@
+# Vivado / Xilinx generated files
+.Xil/
+xsim.dir/
+ip_user_files/
+*.jou
+*.log
+*.str
+*.pb
+*.wdb
+*.cache/
+*.hw/
+*.sim/
+*.runs/
+*.ip_user_files/
+webtalk*
+
+# Common simulator outputs
+work/
+transcript
+vsim.wlf
+questa.ini
+
+# Build and editor noise
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.orig
+*.swp
