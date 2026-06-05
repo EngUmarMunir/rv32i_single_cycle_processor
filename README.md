@@ -1,47 +1,40 @@
-# RV32I Single-Cycle Processor
+# RISC-V RV32I Core SoC
 
-A RISC-V single-cycle RV32I processor implemented in SystemVerilog. The design follows a modular datapath structure, including separate units for control, ALU, memory, and register file. Each instruction executes in a single clock cycle.
-
-## Project Structure
-
-- `riscv_top.sv` – Top-level CPU integration (datapath + control)
-- `program_counter.sv` – Program counter logic
-- `inst_mem.sv` – Instruction memory
-- `reg_file.sv` – 32-register RV32I register file
-- `main_ctrl.sv` – Main control unit (opcode decoding)
-- `alu_ctrl.sv` – ALU control logic
-- `alu.sv` – Arithmetic Logic Unit
-- `imm_gen.sv – Immediate generator
-- `branch.sv` – Branch decision unit
-- `data_mem.sv` – Data memory
-- `load_store_unit.sv` – Load/store data handling
-- `mux.sv` – Multiplexer utility module
-- `fib_im.mem` – Instruction memory initialization file
+A lightweight SystemVerilog implementation of a RISC-V RV32I single-cycle System-on-Chip (SoC). The design separates the processor core from instruction and data memories, following a clean and modular architecture suitable for learning, verification, and future SoC development.
 
 ## Features
 
-- RV32I base integer instruction support
-- Single-cycle execution (no pipeline hazards)
-- Modular and readable RTL design
-- Supports arithmetic, logic, branch, load, store, and jump instructions
-- Simulation-ready with self-checking testbenches
+* RV32I Base Integer ISA Support
+* Single-Cycle Processor Core
+* Separate Instruction and Data Memories
+* Modular RTL Design
+* Load, Store, Branch, Jump, and Arithmetic Instructions
+* FPGA and Simulation Friendly
+* Easy Integration of Future Peripherals and Caches
+
+## Repository Structure
+
+```text
+core.sv               # SoC top-level wrapper
+riscv_top.sv          # RV32I processor core
+program_counter.sv
+reg_file.sv
+main_ctrl.sv
+alu_ctrl.sv
+alu.sv
+imm_gen.sv
+branch.sv
+load_store_unit.sv
+inst_mem.sv
+data_mem.sv
+*fib_im.mem                 # Program memory files
+```
 
 ## Simulation
 
-Tested using Vivado XSim or compatible SystemVerilog simulators.
-## Steps
-1. Create a new Vivado project
-2. Add all `.sv` files as design sources
-3. Add the desired testbench (*_tb.sv) as simulation top
-4. Ensure `.mem` files remain in the project directory
-5. Run simulation
+Supported simulators:
 
-Use `riscv_tb` for top-level verification.
-
-## Notes
-
-- Each instruction completes in one cycle (non-pipelined design)
-- Testbenches access internal signals for verification purposes only
-- Any extension (new instructions or features) requires updates in control, ALU decode, and test programs
-
-# rv32i_single_cycle_processor
+* Vivado XSim
+* Cadence Xcelium
+* Verilator
+* Spike# riscv_rv32i_core_soc
